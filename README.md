@@ -37,7 +37,7 @@
         rfc_grid = GridSearchCV(forest, rfc_params, cv=5, n_jobs=-1,error_score = "roc_auc")
         rfc_grid.fit(X_train, Y_train)
         
-    Получаем признаки модели и точность по метрике roc_auc и accuracy. Делаем вывод , что случайный лес неэффективен для наших данных
+    Получаем признаки модели и точность по метрике ROC_AUC и accuracy. Делаем вывод , что случайный лес неэффективен для наших данных
     
     
     Создаем нейронную сеть с 4 слоями с разным количеством нейронов и разными функциями активации.После этого запускаем валидацию с количеством итераций = 6,количество эпох нейросети = 30. 
@@ -59,3 +59,14 @@
       estimators.append(('mlp', KerasClassifier(build_fn=model_creator, epoc hs=30, batch_size=3, verbose=1)))
       pipeline = Pipeline(estimators)
       results = cross_val_score(pipeline, X, y, cv=6, scoring='roc_auc')
+      
+      
+      Последняя модель, которую мы рассмотрим самую популярную модель xgboost.После отбора параметров и обучения она показывает наилучшие результаты по метрике ROC_AUC
+      
+      bst = xgb.train(param, dtrain, num_round)
+
+      prob = bst.predict(deval)
+      pred_train = pd.DataFrame(np.asarray([np.argmax(line) for line in prob]))
+      print('Set Accuracy:', accuracy_score(Y_eval, pred_train))
+
+      print('ROC_AUC:', roc_auc_score(Y_eval, pred_train))
