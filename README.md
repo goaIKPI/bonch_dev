@@ -1,6 +1,6 @@
-<a href = "https://mlbootcamp.ru/round/15/tasks/#19"> Ссылка на соревнование:</a>
 
-<h1>Соревнование Telecom Data Cup</h1>
+
+<h1>Соревнование Telecom Data Cup[^1]</h1>
 
 * <h3> Используемые библиотеки:</h3>
     <a href = "https://scikit-learn.org/0.16/index.html">sklearn  </a>
@@ -68,5 +68,8 @@
       prob = bst.predict(deval)
       pred_train = pd.DataFrame(np.asarray([np.argmax(line) for line in prob]))
       print('Set Accuracy:', accuracy_score(Y_eval, pred_train))
+      
 
       print('ROC_AUC:', roc_auc_score(Y_eval, pred_train))
+      
+[^1]: <a href = "https://mlbootcamp.ru/round/15/tasks/#19"> Ссылка на соревнование:</a>
