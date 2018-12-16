@@ -1,6 +1,6 @@
 
 
-<h1> [Соревнование Telecom Data Cup][1] </h1>
+<h1> Соревнование Telecom Data Cup </h1>
 
 * <h3> Используемые библиотеки:</h3>
     <a href = "https://scikit-learn.org/0.16/index.html">sklearn  </a>
@@ -72,5 +72,17 @@
 
       print('ROC_AUC:', roc_auc_score(Y_eval, pred_train))
    
-   
-[1]: https://mlbootcamp.ru/round/15/tasks/#19 "Соревнование Telecom Data Cup"
+<hr>
+<h2>Полезные ссылки:</h2>
+<p>
+<p>
+<a href = "https://mlbootcamp.ru/round/15/sandbox/"><small>Соревнование</small></a>
+<p>
+<small><a href = "https://habr.com/post/228963/">ROC_AUC</a>
+</small>
+<p>
+<small><a href = "https://habr.com/post/320726/">Random Forest</a>
+</small>
+<p>
+<small><a href = "https://habr.com/post/266025/">Grid Search</a>
+</small>
